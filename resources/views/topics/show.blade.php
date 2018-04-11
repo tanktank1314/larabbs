@@ -42,7 +42,7 @@
                         <a class="btn btn-default btn-xs" href="{{ route('topics.edit',$topic->id) }}" role="button">
                             <i class="glyphicon glyphicon-edit"></i> 编辑
                         </a>
-                        <a class="btn btn-default btn-xs" href="#" role="button">
+                        <a class="btn btn-default btn-xs" href="{{ route('topics.destroy',$topic->id) }}" role="button">
                             <i class="glyphicon glyphicon-trash"></i> 删除
                         </a>
                     </div>
