@@ -41,7 +41,14 @@
                         </a>
                         <ul class="dropdown-menu" role="menu">
                             <li>
+                                <a href="{{ route('users.show',Auth::user()->id) }}">
+                                    <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+                                    个人中心
+                                </a>
+                            </li>
+                            <li>
                                 <a href="{{ route('users.edit',Auth::user()->id) }}">
+                                    <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
                                     编辑资料
                                 </a>
                             </li>
@@ -49,6 +56,7 @@
                                 <a href="{{ route('logout') }}"
                                 onclick="event.preventDefault();
                                         document.getElementById('logout-form').submit();">
+                                <span class="glyphicon glyphicon-out" aria-hidden="true"></span>
                                 退出登录
                                 </a>
                                 <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
