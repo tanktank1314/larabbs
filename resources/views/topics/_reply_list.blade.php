@@ -14,11 +14,18 @@
                     <span> • </span>
                     <span class="meta" title="{{ $reply->create_at }}">{{ $reply->created_at->diffForHumans() }}</span>
 
-                    <span class="meta pull-right">
-                        <a title="删除回复">
-                            <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
-                        </a>
-                    </span>
+                    @can('destroy', $reply)
+                        <span class="meta pull-right">
+                            <form action="{{ route('replies.destroy',$reply->id) }}" method="POST">
+                                {{ csrf_field() }}
+                                {{ method_field('DELETE') }}
+                                <button type="submit" class="btn btn-default btn-xs pull-left">
+                                    <i class="glyphicon glyphicon-trash"></i>
+                                </button>
+                            </form>
+                        </span>
+                    @endcan
+
                 </div>
                 <div class="reply-content">
                     {!! $reply->content !!}

@@ -59,8 +59,8 @@ class User extends Authenticatable
             return;
         }
 
-    $this->increment('notification_count');
-    $this->laravelNotify($instance);
+        $this->increment('notification_count');
+        $this->laravelNotify($instance);
     }
 
     public function markAsRead()
