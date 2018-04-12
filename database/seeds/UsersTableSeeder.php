@@ -39,5 +39,8 @@ class UsersTableSeeder extends Seeder
         $user->email = '1366453994@qq.com';
         $user->avatar = 'https://larabbs.app/uploads/images/avatars/201804/11/1_1523408537_FsVVLahmjX.jpg';
         $user->save();
+        $user->assignRole('Founder');
+        $user = User::find(2);
+        $user->assignRole('Maintainer');
     }
 }
