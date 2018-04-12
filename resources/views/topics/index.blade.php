@@ -18,7 +18,7 @@
 
             <div class="panel-body">
                 @include('topics._topic_list',['topics' => $topics])
-                {!! $topics->render() !!}
+                {!! $topics->appends(Request::except('page'))->render() !!}
             </div>
         </div>
     </div>
